@@ -1,0 +1,412 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+  background-color: #eeeeee;
+  color: #7a7979 !important;
+}
+/* header */
+header {
+  height: 40px;
+  padding: 0px 20px;
+  background-color: #ffffff;
+  color: #020202;
+}
+
+// body
+.AppBody {
+  height: calc(100vh - 40px);
+  overflow-y: scroll;
+  background-color: #eeeeee;
+  color: #7a7979;
+  font-family: 'Noto Sans KR', sans-serif;
+  // 이미지 재설정
+  .img-reupload-btn {
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-top: 16px;
+    margin-right: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
+    background-color: white;
+  }
+  .img-reupload-btn:hover {
+    background-color: #e1dede;
+  }
+  .img-reupload-btn:active {
+    font-weight: 400;
+    background-color: #e1dede;
+  }
+
+  .video-area {
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .video-area.drop {
+    background-color: #f97316;
+    div {
+      background-color: #4b1f00;
+    }
+    cursor: pointer;
+  }
+  .video-area:hover {
+    background-color: #f97316;
+    color: #fff;
+    div {
+      background-color: #4b1f00;
+    }
+  }
+
+  // button
+  .btn-area {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0 auto;
+    padding: 16px;
+    button {
+      padding: 20px;
+      border-radius: 6px;
+      background-color: #fff;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        width: 48px;
+        height: 48px;
+        margin: 0 auto;
+        margin-bottom: 8px;
+      }
+    }
+    button.orange:hover {
+      background-color: #fff7ed;
+    }
+    button.orange:active {
+      color: #f97316;
+      background-color: #fff7ed;
+    }
+    button.violet:hover {
+      background-color: #f5f3ff;
+    }
+    button.violet:active {
+      color: #8b5cf6;
+      background-color: #f5f3ff;
+    }
+    button.sky:hover {
+      background-color: #f0f9ff;
+    }
+    button.sky:active {
+      color: #0ea5e9;
+      background-color: #f0f9ff;
+    }
+  }
+  @media (max-width: 576px) {
+    .btn-area {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      button {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        div {
+          width: 32px;
+          height: 32px;
+          margin: 4px;
+          margin-right: 8px;
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: 430px) {
+    .btn-area {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}
+
+body.chakra-ui-dark {
+  background-color: #1c1917;
+  color: #ddd;
+  header {
+    background-color: #292524;
+    color: #ffffff;
+  }
+  button {
+    background-color: #1c1917;
+  }
+  .video-area:hover {
+    background-color: #f76801;
+    color: #fff;
+    div {
+      background-color: #4b1f00;
+    }
+  }
+  .video-area.drop {
+    background-color: #f76801;
+    color:#fff;
+  }
+  .AppBody {
+    background-color: #1c1917;
+    .ImgUploadArea {
+      background-color: #ffffff;
+    }
+    button {
+      background-color: #292524;
+      color: #eee;
+    }
+    .img-reupload-btn {
+      background-color: #292524;
+    }
+    .img-reupload-btn:hover {
+      background-color: #3e3a3a;
+    }
+    .img-reupload-btn:active {
+      background-color: #3e3a3a;
+      font-weight: 400;
+    }
+    .btn-area {
+      button.orange:hover {
+        background-color: #ff5c16;
+      }
+      button.orange:active {
+        color: #fff;
+        background-color: #ff5c16;
+      }
+      button.violet:hover {
+        background-color: #8a38f5;
+      }
+      button.violet:active {
+        color: #fff;
+        background-color: #8a38f5;
+        font-weight: 500;
+      }
+      button.sky:hover {
+        background-color: #0c8ce9;
+      }
+      button.sky:active {
+        background-color: #0c8ce9;
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+    button {
+      background-color: #292524;
+      color: #eee;
+    }
+  }
+  .video-area {
+    background-color: #292524;
+    color:#ccc;
+  }
+  .chakra-modal__content {
+    background-color: #292524;
+    color: #eee;
+  }
+  // 모달 하단 버튼
+  .modal-bottom-btn {
+    border-radius: 6px;
+    padding: 8px 16px;
+  }
+  .close-btn {
+    background-color: #1e1e1e;
+  }
+  // 닫기 버튼
+  .close-btn:hover {
+    background-color: #3c3a3a;
+  }
+  .close-btn:active {
+    background-color: #3e3a3a;
+    font-weight: 600;
+  }
+
+  // 다운로드 버튼
+  .primary-btn {
+    background-color: #ff6105;
+    color: #fff;
+  }
+  .primary-btn:hover {
+    background-color: #f97316;
+  }
+  .primary-btn:active {
+    background-color: #f97316;
+    font-weight: 600;
+  }
+  // toast
+.chakra-alert {
+  background-color: #fbd2b4 !important;  
+}
+}
+
+//  슬라이더
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 768px;
+}
+
+.slider__track,
+.slider__range,
+.slider__left-value,
+.slider__right-value {
+  position: absolute;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 4px;
+}
+
+.slider__track {
+  background-color: #ddd;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: #f97316;
+  z-index: 2;
+}
+
+.slider__left-value,
+.slider__right-value {
+  color: #f97316;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.slider__left-value {
+  left: 6px;
+}
+
+.slider__right-value {
+  right: -4px;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  outline: none;
+}
+
+.thumb--zindex-3 {
+  z-index: 3;
+}
+
+.thumb--zindex-4 {
+  z-index: 4;
+}
+
+.thumb--zindex-5 {
+  z-index: 5;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-image: url('./assets/icon_play.svg');
+  background-size: cover;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: #f97316;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/**  모달  **/
+// 모달 몸체
+.chakra-modal__body,
+.chakra-modal__header {
+  padding: 20px !important;
+}
+@media (max-width: 430px) {
+  .chakra-modal__body,
+  .chakra-modal__header {
+    padding: 10px !important;
+  }
+}
+
+// 모달 하단 버튼
+.modal-bottom-btn {
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+.modal-bottom-btn:disabled {
+  background-color: #ddd;
+}
+.modal-bottom-btn:disabled:hover {
+  background-color: #ddd;
+}
+
+// 닫기 버튼
+.close-btn {
+  background-color: #f4f4f5;
+}
+.close-btn:hover {
+  background-color: #ecebeb;
+}
+.close-btn:active {
+  background-color: #ecebeb;
+  font-weight: 600;
+}
+
+// 다운로드 버튼
+.primary-btn {
+  background-color: #f97316;
+  color: #fff;
+}
+.primary-btn:hover {
+  background-color: #ea580c;
+}
+.primary-btn:active {
+  background-color: #ea580c;
+  font-weight: 600;
+}
+// toast
+.chakra-alert {
+  background-color: #f76801 !important;  
+}
+
+.color-picker-area {
+  width: 200px;
+  height: 224px;
+  margin-left: -200px;
+  z-index: 10000;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+} 
